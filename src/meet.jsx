@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion} from 'framer-motion';
 
 const TypeWriter = ({ text, delay = 40 }) => {
   const [displayText, setDisplayText] = useState('');
