@@ -140,7 +140,7 @@ const ProjectsPage = () => {
   return (
     <div>
       <Header/>
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 to-purple-900 py-20 px-4">
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 to-purple-900 py-20 px-4 mt-10">
         <div className="container mx-auto">
           <h1 className="text-4xl font-bold text-center text-purple-400 mb-12">Our Projects</h1>
           <div className="space-y-8">

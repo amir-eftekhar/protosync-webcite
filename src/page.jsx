@@ -37,16 +37,17 @@ const Header = () => {
       return () => window.removeEventListener('scroll', handleScroll);
     }, []);
   
+    const basePath = process.env.NODE_ENV === 'production' ? '/protosync-webcite' : '';
+
     const navItems = [
-        { name: 'About', icon: <Info size={24} />, href: '/#about' },
-        { name: 'Video', icon: <Video size={24} />, href: '/#video' },
-        { name: 'Why ProtoSync', icon: <Star size={24} />, href: '#why' },
-        
-        { name: 'Team', icon: <Users size={24} />, href: '/#team' },
-        { name: 'Projects', icon: <Rocket size={24} />, href: '/#projects' },
-        { name: 'Join Us', icon: <UserPlus size={24} />, href: '/#join' },
-        { name: 'Contact', icon: <MessageCircle size={24} />, href: '/#contact' },
-      ];
+        { name: 'About', icon: <Info size={24} />, href: `${basePath}/#about` },
+        { name: 'Video', icon: <Video size={24} />, href: `${basePath}/#video` },
+        { name: 'Why ProtoSync', icon: <Star size={24} />, href: `${basePath}/#why` },
+        { name: 'Team', icon: <Users size={24} />, href: `${basePath}/#team` },
+        { name: 'Projects', icon: <Rocket size={24} />, href: `${basePath}/#projects` },
+        { name: 'Join Us', icon: <UserPlus size={24} />, href: `${basePath}/#join` },
+        { name: 'Contact', icon: <MessageCircle size={24} />, href: `${basePath}/#contact` },
+    ];
     
     return (
       <motion.header 
