@@ -92,31 +92,31 @@ code {
 }
 @media (max-width: 768px) {
   .scene {
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
   }
   .cube {
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
   }
   .cube__face {
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
   }
   .cube__face--front {
-    transform: translateZ(75px);
+    transform: translateZ(125px);
   }
   .cube__face--right {
-    transform: rotateY(90deg) translateZ(75px);
+    transform: rotateY(90deg) translateZ(125px);
   }
   .cube__face--back {
-    transform: rotateY(180deg) translateZ(75px);
+    transform: rotateY(180deg) translateZ(125px);
   }
   .cube__face--left {
-    transform: rotateY(-90deg) translateZ(75px);
+    transform: rotateY(-90deg) translateZ(125px);
   }
   .cube__face--top {
-    transform: rotateX(90deg) translateZ(75px);
+    transform: rotateX(90deg) translateZ(125px);
   }
   .cube__face--bottom {
     transform: rotateX(-90deg) translateZ(75px);

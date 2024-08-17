@@ -5,7 +5,7 @@ import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 import ScrollFadeIn from './Fade.jsx';
 import Meet from './meet.jsx'
 import { Link } from 'react-router-dom';
-import logo from './images/logo.svg'
+import logo from './images/logo2.svg'
 
 const TypeWriter = ({ text, delay = 40 }) => {
   const [displayText, setDisplayText] = useState('');
@@ -37,14 +37,14 @@ const Header = () => {
       return () => window.removeEventListener('scroll', handleScroll);
     }, []);
   
-    const basePath = process.env.NODE_ENV === 'production' ? '/protosync-webcite' : '';
+    const basePath = process.env.NODE_ENV === 'production' ? '/Trivally Tech-webcite' : '';
 
     const navItems = [
         { name: 'About', icon: <Info size={24} />, href: `${basePath}/#about` },
-        { name: 'Video', icon: <Video size={24} />, href: `${basePath}/#video` },
-        { name: 'Why ProtoSync', icon: <Star size={24} />, href: `${basePath}/#why` },
-        { name: 'Team', icon: <Users size={24} />, href: `${basePath}/#team` },
-        { name: 'Projects', icon: <Rocket size={24} />, href: `${basePath}/#projects` },
+        /*{ name: 'Video', icon: <Video size={24} />, href: `${basePath}/#video` },*/
+        { name: 'Why Trivally Tech', icon: <Star size={24} />, href: `${basePath}/#why` },
+        /*{ name: 'Team', icon: <Users size={24} />, href: `${basePath}/#team` },
+        { name: 'Projects', icon: <Rocket size={24} />, href: `${basePath}/#projects` },*/
         { name: 'Join Us', icon: <UserPlus size={24} />, href: `${basePath}/#join` },
         { name: 'Contact', icon: <MessageCircle size={24} />, href: `${basePath}/#contact` },
     ];
@@ -65,7 +65,7 @@ const Header = () => {
             href="/"
             whileHover={{ scale: 1.05 }}
             >
-            <img src={logo} alt="ProtoSync Logo" style={{ height: '3rem', width: 'auto' }} />
+            <img src={logo} alt="Trivally Tech Logo" style={{ height: '4rem', width: 'auto' }} />
         </motion.a>
 
             <nav className="hidden md:block">
@@ -148,14 +148,23 @@ const RotatingCube = () => (
           <p>Global Impact</p>
         </div>
         <div className="cube__face cube__face--top">
-          <img src="/api/placeholder/200/200" alt="ProtoSync Logo" className="w-16 h-16" />
+          <img src={logo} alt="Trivally Tech Logo" className="w-150 h-150" />
         </div>
         <div className="cube__face cube__face--bottom">
-          <p className="text-lg font-bold">ProtoSync</p>
+        <img src={logo} alt="Trivally Tech Logo" className="w-150 h-150" />
+          {/*<p className="text-lg font-bold">Trivally Tech</p>*/}
         </div>
       </div>
     </div>
   );
+
+
+  const scrollToJoinSection = () => {
+    const joinSection = document.getElementById('join');
+    if (joinSection) {
+      joinSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   
 const Hero = () => (
   <section className="relative min-h-screen flex items-start justify-center bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 overflow-hidden pt-20 pb-12 md:py-16">
@@ -175,15 +184,18 @@ const Hero = () => (
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Turn your ideas into real-world impact with ProtoSync
+          Turn your ideas into real-world impact with Trivally Tech
         </motion.p>
         <motion.button
-          className="bg-purple-600 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-purple-700 transition duration-300 shadow-neon"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Get Started
-        </motion.button>
+      className="bg-purple-600 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-purple-700 transition duration-300 shadow-neon"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      onClick={scrollToJoinSection}
+    >
+      Get Started
+    </motion.button>
+
+        
       </div>
       <div className="md:w-1/2 flex justify-center mt-8 md:mt-0">
         <RotatingCube />
@@ -246,7 +258,7 @@ const Feature = ({ icon, title, description }) => (
 const Why = () => (
   <section className="py-20 bg-gradient-to-br from-gray-900 to-gray-800">
     <div className="container mx-auto px-4">
-      <h2 className="text-3xl font-bold text-center mb-12 text-purple-400">Why Join ProtoSync?</h2>
+      <h2 className="text-3xl font-bold text-center mb-12 text-purple-400">Why Join Trivally Tech?</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <Feature 
           icon={<Users size={48} className="text-purple-500" />}
@@ -271,7 +283,7 @@ const Why = () => (
 const AboutUs = () => (
     <section id="about" className="py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 text-purple-400">About ProtoSync</h2>
+        <h2 className="text-3xl font-bold text-center mb-12 text-purple-400">About Trivally Tech</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -279,18 +291,18 @@ const AboutUs = () => (
             transition={{ duration: 0.5 }}
           >
             <p className="text-lg mb-6 text-gray-300">
-              <TypeWriter text="ProtoSync is a nonprofit organization dedicated to empowering high school students to create real-world impact through innovative projects. We believe that today's students have the potential to solve many of the challenges we face in our communities and beyond." />
+              <TypeWriter text="Trivally Tech is a nonprofit organization dedicated to empowering high school students to create real-world impact through innovative projects. We believe that today's students have the potential to solve many of the challenges we face in our communities and beyond." />
             </p>
             <p className="text-lg mb-6 text-gray-300">
-              Our mission is to provide resources, guidance, and a collaborative platform that helps students take their ideas from concept to reality. By joining ProtoSync, you become part of a community of passionate peers who share your drive to make a difference.
+              Our mission is to provide resources, guidance, and a collaborative platform that helps students take their ideas from concept to reality. By joining Trivally Tech, you become part of a community of passionate peers who share your drive to make a difference.
             </p>
             <p className="text-lg text-gray-300">
-              Whether you're interested in technology, environmental issues, art, or any other field, ProtoSync offers the opportunity to work on meaningful projects, learn new skills, and connect with mentors who can help shape your future.
+              Whether you're interested in technology, environmental issues, art, or any other field, Trivally Tech offers the opportunity to work on meaningful projects, learn new skills, and connect with mentors who can help shape your future.
             </p>
           </motion.div>
           <div className="grid grid-cols-2 gap-4">
             {[
-              { icon: <Globe size={48} />, text: "Global Impact" },
+              { icon: <Globe size={48} />, text: "High Impact" },
               { icon: <Code size={48} />, text: "Tech Innovation" },
               { icon: <Palette size={48} />, text: "Creative Solutions" },
               { icon: <Users size={48} />, text: "Community Building" }
@@ -374,7 +386,7 @@ const AboutUs = () => (
   );
 const CTA = () => (
     
-  <section id="join-us" className="bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white py-20">
+  <section id="join-us" className="bg-gradient-to-br from-gray-900  to-gray-700 text-white py-20">
     <div className="container mx-auto text-center px-4">
       <motion.h2 
         className="text-3xl font-bold mb-4 text-purple-400"
@@ -390,8 +402,9 @@ const CTA = () => (
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
       >
-        Join ProtoSync today and start turning your ideas into action!
+        Join Trivally Tech today and start turning your ideas into action!
       </motion.p>
+      <a href="https://discord.gg/9jNzqCQ3" target="_blank" rel="noopener noreferrer">
       <motion.button 
         className="bg-purple-600 text-white px-6 py-2 rounded-full font-bold hover:bg-purple-700 transition duration-300 shadow-neon"
         whileHover={{ scale: 1.05 }}
@@ -399,6 +412,7 @@ const CTA = () => (
       >
         Join Now <ArrowRight className="inline" />
       </motion.button>
+    </a>
     </div>
   </section>
 );
@@ -488,7 +502,7 @@ const Footer = () => (
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold text-purple-400 mb-4">ProtoSync</h3>
+            <h3 className="text-xl font-bold text-purple-400 mb-4">Trivally Tech</h3>
             <p className="text-sm">Empowering high school innovators to create real-world impact through collaborative projects.</p>
           </div>
           <div>
@@ -501,9 +515,8 @@ const Footer = () => (
           </div>
           <div>
             <h4 className="text-lg font-semibold text-purple-400 mb-4">Contact Us</h4>
-            <p className="text-sm">123 Street</p>
-            <p className="text-sm">Dublin, CA 12345</p>
-            <p className="text-sm">Email: protosynctech@gmail.com</p>
+            
+            <p className="text-sm">Email: trivalleytechnology@gmail.com</p>
             <p className="text-sm">Phone: (470) 609-2206</p>
           </div>
           <div>
@@ -530,7 +543,7 @@ const Footer = () => (
           </div>
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p>&copy; 2024 ProtoSync. All rights reserved.</p>
+          <p>&copy; 2024 Trivally Tech. All rights reserved.</p>
         </div>
       </div>
     </footer>
@@ -547,11 +560,12 @@ const Footer = () => (
           <Hero />
         </section>
       </ScrollFadeIn>
-      <ScrollFadeIn>
+      {/*<ScrollFadeIn>
         <section id="video">
           <VideoSection />
         </section>
       </ScrollFadeIn>
+      */}
       <ScrollFadeIn>
         <section id="why">
           <Why />
@@ -562,16 +576,19 @@ const Footer = () => (
           <AboutUs />
         </section>
       </ScrollFadeIn>
-      <ScrollFadeIn>
+      {/*<ScrollFadeIn>
         <section id="team">
           <Meet />
         </section>
+
       </ScrollFadeIn>
+      
       <ScrollFadeIn>
         <section id="projects">
           <Projects />
         </section>
       </ScrollFadeIn>
+      */}
       <ScrollFadeIn>
         <section id="join">
           <CTA />
