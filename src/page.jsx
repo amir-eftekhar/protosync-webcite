@@ -368,7 +368,7 @@ const AboutUs = () => (
             tags={['Smart Home', 'Water Conservation', 'IoT']}
           />
         </div>
-        <div className="text-center mt-12">
+        <div className="text-center mt-13">
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
